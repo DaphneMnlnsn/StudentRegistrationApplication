@@ -15,16 +15,15 @@ namespace StudentRegistrationApplication
         public frmStudentRegistration()
         {
             InitializeComponent();
-
             
-            for(int daysNum = 1; daysNum <= 31; daysNum++)
-            {
-                comboDays.Items.Add(daysNum);
-            }
-
             for (int monthsNum = 1; monthsNum <= 12; monthsNum++)
             {
                 comboMonths.Items.Add(monthsNum);
+            }
+
+            for (int daysNum = 1; daysNum <= 31; daysNum++)
+            {
+                comboDays.Items.Add(daysNum);
             }
 
             for (int yearsNum = 1900; yearsNum <= 2024; yearsNum++)
@@ -68,7 +67,7 @@ namespace StudentRegistrationApplication
         {
             if(textBox1 != null && textBox2 != null && textBox3 != null && radioButton1 != null && radioButton2 != null && comboDays.Text != "-Day-" && comboMonths.Text != "-Month-" && comboYears.Text != "-Year-")
             {
-                string studentName = "Student Name: " + textBox3.Text + " " + textBox1.Text + " " + textBox2.Text;
+                string studentName = "Student Name: " + textBox2.Text + " " + textBox3.Text + " " + textBox1.Text;
                 string gender = "Gender: ";
                 string birthDate = "Date of Birth: " + comboDays.Text + "/" + comboMonths.Text + "/" + comboYears.Text;
 
