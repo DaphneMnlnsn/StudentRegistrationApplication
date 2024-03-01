@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace StudentRegistrationApplication
         public frmStudentRegistration()
         {
             InitializeComponent();
-            
+
             for (int monthsNum = 1; monthsNum <= 12; monthsNum++)
             {
                 comboMonths.Items.Add(monthsNum);
@@ -71,6 +72,7 @@ namespace StudentRegistrationApplication
                 string gender = "Gender: ";
                 string birthDate = "Date of Birth: " + comboDays.Text + "/" + comboMonths.Text + "/" + comboYears.Text;
 
+
                 if (radioButton1.Checked == true)
                 {
                     gender = "Gender: " + radioButton1.Text;
@@ -91,12 +93,12 @@ namespace StudentRegistrationApplication
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            radioButton1.Checked = true;
+
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            radioButton2.Checked = true;
+
         }
     }
 }

@@ -180,7 +180,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(242, 263);
+            this.button1.Location = new System.Drawing.Point(231, 270);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 43);
             this.button1.TabIndex = 14;
@@ -229,7 +229,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 345);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(659, 359);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
