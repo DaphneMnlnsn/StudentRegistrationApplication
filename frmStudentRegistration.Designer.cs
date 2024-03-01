@@ -44,6 +44,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboProgram = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,7 +182,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(231, 270);
+            this.button1.Location = new System.Drawing.Point(464, 270);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 43);
             this.button1.TabIndex = 14;
@@ -225,12 +227,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(21, 254);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(158, 19);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Program to Apply *";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboProgram
+            // 
+            this.comboProgram.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboProgram.FormattingEnabled = true;
+            this.comboProgram.Location = new System.Drawing.Point(25, 286);
+            this.comboProgram.Name = "comboProgram";
+            this.comboProgram.Size = new System.Drawing.Size(352, 27);
+            this.comboProgram.TabIndex = 20;
+            this.comboProgram.Text = "-Select program-";
+            // 
             // frmStudentRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(659, 359);
+            this.Controls.Add(this.comboProgram);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -271,6 +296,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboProgram;
     }
 }
 

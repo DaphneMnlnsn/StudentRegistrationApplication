@@ -32,6 +32,26 @@ namespace StudentRegistrationApplication
                 comboYears.Items.Add(yearsNum);
             }
 
+            string[] monthsText = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+            comboMonths.Items.Clear();
+
+            foreach (string monthName in monthsText)
+            {
+                
+                comboMonths.Items.Add(monthName);
+            }
+
+            ArrayList programsList = new ArrayList();
+            programsList.Add("Bachelor of Science in Computer Science");
+            programsList.Add("Bachelor of Science in Information Technology");
+            programsList.Add("Bachelor of Science in Information Systems");
+            programsList.Add("Bachelor of Science in Computer Engineering");
+
+            foreach (string programName in programsList)
+            {
+                comboProgram.Items.Add(programName);
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -66,11 +86,13 @@ namespace StudentRegistrationApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1 != null && textBox2 != null && textBox3 != null && radioButton1 != null && radioButton2 != null && comboDays.Text != "-Day-" && comboMonths.Text != "-Month-" && comboYears.Text != "-Year-")
+            if (textBox1 != null && textBox2 != null && textBox3 != null && radioButton1 != null && radioButton2 != null && comboDays.Text != "-Day-" && comboMonths.Text != "-Month-" && comboYears.Text != "-Year-" && comboProgram.Text != "-Select program-")
             {
                 string studentName = "Student Name: " + textBox2.Text + " " + textBox3.Text + " " + textBox1.Text;
                 string gender = "Gender: ";
                 string birthDate = "Date of Birth: " + comboDays.Text + "/" + comboMonths.Text + "/" + comboYears.Text;
+                string program = "Program: " + comboProgram.Text;
+
 
 
                 if (radioButton1.Checked == true)
@@ -82,7 +104,7 @@ namespace StudentRegistrationApplication
                     gender = "Gender: " + radioButton2.Text;
                 }
 
-                MessageBox.Show(studentName + "\n" + gender + "\n" + birthDate);
+                MessageBox.Show(studentName + "\n" + gender + "\n" + birthDate + "\n" + program);
             }
             else
             {
