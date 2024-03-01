@@ -93,8 +93,6 @@ namespace StudentRegistrationApplication
                 string birthDate = "Date of Birth: " + comboDays.Text + "/" + comboMonths.Text + "/" + comboYears.Text;
                 string program = "Program: " + comboProgram.Text;
 
-
-
                 if (radioButton1.Checked == true)
                 {
                     gender = "Gender: " + radioButton1.Text;
