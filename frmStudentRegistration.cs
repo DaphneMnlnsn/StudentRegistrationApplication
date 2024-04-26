@@ -83,32 +83,75 @@ namespace StudentRegistrationApplication
         {
 
         }
+        private void generateBio(string firstName, string lastName, string program)
+        {
+            MessageBox.Show(firstName+ " " + lastName + "\n" + program);
+        }
+        private void generateBio(string firstName, string middleName, string lastName, string program)
+        {
+            MessageBox.Show(firstName + " " + middleName + " " + lastName + "\n" + program);
+        }
+        private void generateBio(string firstName, string middleName, string lastName, string gender, string program)
+        {
+            MessageBox.Show(firstName + " " + middleName + " " + lastName + "\n" + gender + "\n" + program);
+        }
+        private void generateBio(string firstName, string middleName, string lastName, string birthDate, string month, string year, string program)
+        {
+            MessageBox.Show(firstName + " " + middleName + " " + lastName + "\n" + birthDate + month + year + "\n" + program);
+        }
+        private void generateBio(string firstName, string middleName, string lastName, string gender, string birthDate, string month, string year, string program)
+        {
+            MessageBox.Show(firstName + " " + middleName + " " + lastName + "\n" + gender + "\n" + birthDate + month + year + "\n" + program);
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1 != null && textBox2 != null && textBox3 != null && radioButton1 != null && radioButton2 != null && comboDays.Text != "-Day-" && comboMonths.Text != "-Month-" && comboYears.Text != "-Year-" && comboProgram.Text != "-Select program-")
+            string firstname = "Student Name: " + textBox2.Text;
+            string middlename = textBox3.Text;
+            string lastname = textBox1.Text;
+            string gender = "Gender: ";
+            string month = "/" + comboMonths.Text + "/";
+            string year = comboYears.Text;
+            string birthDate = "Date of Birth: " + comboDays.Text;
+            string program = "Program: " + comboProgram.Text;
+            bool dateAvailable = !(comboDays.Text == "-Day-" || comboDays.Text == "") && !(comboMonths.Text == "-Month-" || comboDays.Text == "") && !(comboYears.Text == "-Year-" || comboDays.Text == "");
+
+            if (radioButton1.Checked == true)
             {
-                string studentName = "Student Name: " + textBox2.Text + " " + textBox3.Text + " " + textBox1.Text;
-                string gender = "Gender: ";
-                string birthDate = "Date of Birth: " + comboDays.Text + "/" + comboMonths.Text + "/" + comboYears.Text;
-                string program = "Program: " + comboProgram.Text;
+                gender = "Gender: " + radioButton1.Text;
+            }
+            else if (radioButton2.Checked == true)
+            {
+                gender = "Gender: " + radioButton2.Text;
+            }
 
-                if (radioButton1.Checked == true)
-                {
-                    gender = "Gender: " + radioButton1.Text;
-                }
-                else if (radioButton2.Checked == true)
-                {
-                    gender = "Gender: " + radioButton2.Text;
-                }
-
-                MessageBox.Show(studentName + "\n" + gender + "\n" + birthDate + "\n" + program);
+            if (textBox1.Text != null && textBox2 != null && textBox3 == null && radioButton1 == null && radioButton2 == null && dateAvailable == false && comboProgram.Text != "-Select program-")
+            {
+                generateBio(firstname, lastname, program);
+                
+            }
+            else if (textBox1 != null && textBox2 != null && textBox3 != null && !radioButton1.Checked && !radioButton2.Checked && dateAvailable == false && comboProgram.Text != "-Select program-")
+            {
+                generateBio(firstname, middlename, lastname, program);
+            }
+            else if (textBox1 != null && textBox2 != null && textBox3 != null && !radioButton1.Checked && !radioButton2.Checked && dateAvailable == true && comboProgram.Text != "-Select program-")
+            {
+                generateBio(firstname, middlename, lastname, birthDate, month, year, program);
+            }
+            else if (textBox1 != null && textBox2 != null && textBox3 != null && (!radioButton1.Checked || !radioButton2.Checked) && dateAvailable == false && comboProgram.Text != "-Select program-")
+            {
+                generateBio(firstname, middlename, lastname, gender, program);
+            }
+            else if (textBox1 != null && textBox2 != null && textBox3 != null && (!radioButton1.Checked || !radioButton2.Checked) && dateAvailable == true && comboProgram.Text != "-Select program-")
+            {
+                generateBio(firstname, middlename, lastname, gender, birthDate, month, year, program);
             }
             else
             {
-                MessageBox.Show("Items with asterisks are required! Please try again.");
+                MessageBox.Show("Items with asterisks are required!");
             }
-            
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -119,6 +162,49 @@ namespace StudentRegistrationApplication
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmStudentRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboMonths_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboYears_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openFile.Title = "Open Image Files";
+            openFile.ShowDialog();
+
+            pictureBox1.Image = Image.FromFile(openFile.FileName);
         }
     }
 }
